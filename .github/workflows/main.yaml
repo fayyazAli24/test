@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main  # Change this to your default branch
-      - test
 
 jobs:
   build:
