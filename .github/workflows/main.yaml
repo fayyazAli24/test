@@ -1,0 +1,43 @@
+name: Build macOS Release
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch
+      - test
+
+jobs:
+  build:
+    runs-on: macos-latest  # Use a macOS runner
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Checkout the project code
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.3'  # Specify your Flutter version
+          channel: stable
+
+      - name: Enable macOS Support
+        run: flutter config --enable-macos-desktop
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Clean and Reconfigure CocoaPods
+        run: |
+          cd macos
+          rm -rf Pods Podfile.lock
+          sed -i '' '/RunnerTests/d' Podfile  # Remove RunnerTests target from Podfile
+          pod install
+
+      - name: Build macOS Release
+        run: flutter build macos
+
+      - name: Upload macOS App Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: macOS-App
+          path: build/macos/Build/Products/Release/
