@@ -16,7 +16,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.x'  # Specify your Flutter version
+          flutter-version: '3.27.3'  # Specify your Flutter version
           channel: stable
 
       - name: Enable macOS Support
