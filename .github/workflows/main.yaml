@@ -25,10 +25,11 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Clean and Reinstall CocoaPods
+      - name: Clean and Reconfigure CocoaPods
         run: |
           cd macos
           rm -rf Pods Podfile.lock
+          sed -i '' '/RunnerTests/d' Podfile  # Remove RunnerTests target from Podfile
           pod install
 
       - name: Build macOS Release
