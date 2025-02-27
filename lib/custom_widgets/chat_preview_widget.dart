@@ -7,17 +7,14 @@ import 'status_builder.dart';
 import 'user_avatar.dart';
 
 class ChatPreviewWidget extends StatelessWidget {
-  const ChatPreviewWidget(
-      {Key? key, required this.chat, this.isSelected = false})
-      : super(key: key);
+  const ChatPreviewWidget({Key? key, required this.chat, this.isSelected = false}) : super(key: key);
   final ChatPreviewModel chat;
   final bool isSelected;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
-      decoration: BoxDecoration(
-          color: isSelected ? const Color(0xff252b2e) : Colors.transparent),
+      decoration: BoxDecoration(color: isSelected ? const Color(0xff252b2e) : Colors.transparent),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -78,7 +75,7 @@ class ChatPreviewWidget extends StatelessWidget {
                 height: 4,
               ),
               chat.unreadCount > 0
-                  ? Badge(
+                  ? CustomBadge(
                       caption: chat.unreadCount.toString(),
                       color: primaryParticipantColor,
                       fontSize: 8,

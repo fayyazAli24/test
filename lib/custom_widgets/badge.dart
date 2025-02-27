@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Badge extends StatelessWidget {
-  const Badge(
-      {Key? key, required this.caption, required this.color, this.fontSize = 10})
-      : super(key: key);
+class CustomBadge extends StatelessWidget {
+  const CustomBadge({Key? key, required this.caption, required this.color, this.fontSize = 10}) : super(key: key);
 
   final Color color;
   final String caption;

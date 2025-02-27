@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../custom_widgets/badge.dart';
 import '../resources/chat_previews.dart';
 import '../resources/colors.dart';
-import 'badge.dart';
 import 'chat_preview_widget.dart';
 
 class ChatListWidget extends StatelessWidget {
@@ -32,7 +32,7 @@ class ChatListWidget extends StatelessWidget {
               SizedBox(
                 width: 10,
               ),
-              Badge(
+              CustomBadge(
                 caption: "28",
                 color: primaryParticipantColor,
                 fontSize: 10,

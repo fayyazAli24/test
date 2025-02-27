@@ -2,9 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/charm.dart';
-import 'package:iconify_flutter/icons/fluent.dart';
-import 'package:iconify_flutter/icons/jam.dart';
 import 'package:iconify_flutter/icons/cil.dart';
+import 'package:iconify_flutter/icons/jam.dart';
 
 import '../../resources/colors.dart';
 import '../../resources/input_border.dart';
@@ -27,9 +26,7 @@ class ChatUi extends StatelessWidget {
             child: SingleChildScrollView(
               controller: chatController,
               child: Column(
-                children: messages
-                    .map((e) => e.builder(context, loggedInUser))
-                    .toList(),
+                children: messages.map((e) => e.builder(context, loggedInUser)).toList(),
               ),
             ),
           ),
@@ -38,11 +35,11 @@ class ChatUi extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Row(
             children: [
-              const Iconify(
-                Fluent.attach_12_regular,
-                size: 30,
-                color: Colors.white,
-              ),
+              //  Iconify(
+              //   // Fluent.attach_12_regular,
+              //   size: 30,
+              //   color: Colors.white,
+              // ),
               const SizedBox(
                 width: 20,
               ),
@@ -59,11 +56,11 @@ class ChatUi extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: Color.fromARGB(22, 255, 255, 255),
                           ),
-                          child: const Iconify(
-                            Fluent.emoji_28_regular,
-                            size: 18,
-                            color: Colors.white,
-                          ),
+                          // child: const Iconify(
+                          //   Fluent.emoji_28_regular,
+                          //   size: 18,
+                          //   color: Colors.white,
+                          // ),
                         ),
                       ),
                       hintStyle: const TextStyle(fontSize: 14),
@@ -110,8 +107,7 @@ class ChatUiAppBar extends StatelessWidget {
             child: Row(
               children: [
                 const CircleAvatar(
-                  backgroundImage: CachedNetworkImageProvider(
-                      "https://randomuser.me/api/portraits/men/46.jpg"),
+                  backgroundImage: CachedNetworkImageProvider("https://randomuser.me/api/portraits/men/46.jpg"),
                   radius: 25,
                 ),
                 const SizedBox(
@@ -153,11 +149,11 @@ class ChatUiAppBar extends StatelessWidget {
               border: Border.all(color: greyColor),
               shape: BoxShape.circle,
             ),
-            child: const Iconify(
-              Fluent.call_24_regular,
-              color: Colors.white,
-              size: 26,
-            ),
+            // child: const Iconify(
+            //   Fluent.call_24_regular,
+            //   color: Colors.white,
+            //   size: 26,
+            // ),
           ),
           const SizedBox(width: 10),
           Container(

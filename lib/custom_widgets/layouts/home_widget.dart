@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../resources/colors.dart';
 import '../chat_list_widget.dart';
 import '../home_widget_app_bar.dart';
 import '../online_now.dart';
-import 'search_bar.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
