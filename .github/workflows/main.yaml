@@ -25,6 +25,12 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
+      - name: Clean and Reinstall CocoaPods
+        run: |
+          cd macos
+          rm -rf Pods Podfile.lock
+          pod install
+
       - name: Build macOS Release
         run: flutter build macos
 
