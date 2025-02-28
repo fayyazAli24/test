@@ -3,7 +3,7 @@ name: Build macOS Release
 on:
   push:
     branches:
-      - main  # Change this to your default branch
+      - main
 
 jobs:
   build:
